@@ -1,7 +1,30 @@
+:root{
+  --color-dark-bg-primary: #141C24;
+  --color-dark-bg-secondary: #344051;
+  --color-dark-text: #FFFFFF;
+  --color-primary: #1975FF;
+}
+
 body{
   width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+
+.app[data-theme="dark"]{
+  background-color: var(--color-dark-bg-primary);
+
+  color: #FFFFFF;
+
+  transition: 300ms ease;
+}
+
+.app[data-theme="light"]{
+  background-color: #FFFFFF;
+
+  color: #000000;
+
+  transition: 300ms ease;
 }

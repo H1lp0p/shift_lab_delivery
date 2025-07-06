@@ -1,0 +1,17 @@
+.page{
+    display: flex;
+    flex-direction: column;
+
+    justify-items: center;
+    align-items: center;
+
+    transition: 300ms ease;
+}
+
+div[data-theme="light"] .page{
+    background-color: #F3F4F6;
+}
+
+div[data-theme="dark"] .page{
+    background-color: #344051;
+}
