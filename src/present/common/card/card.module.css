@@ -1,0 +1,19 @@
+.card{
+    border-radius: 16px;
+
+    width: min-content;
+
+    transition: 200ms ease;
+}
+
+div[data-theme="light"] .card{
+    background-color: #FFFFFF;
+}
+
+div[data-theme="dark"] .card{
+    background-color: #141C24;
+}
+
+.card[data-variant="outlined"]{
+    border: 1px solid #E3E5E5;
+}
