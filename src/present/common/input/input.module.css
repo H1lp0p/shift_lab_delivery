@@ -1,0 +1,54 @@
+.label{
+    
+}
+
+.input{
+    background-color: transparent;
+
+    margin-top: .5rem;
+
+    padding: 8px;
+    border: 1px solid #CED2DA;
+
+    border-radius: 8px;
+
+    transition: 300ms ease;
+
+    box-sizing: border-box;
+}
+
+.input.error,
+.input.error:focus,
+div[data-theme="dark"] .input.error:focus{
+    border-color: #f64c4c;
+}
+
+.input:focus{
+
+    border: 1px solid black;
+
+    outline: none;
+}
+
+
+
+div[data-theme="dark"] .input{
+    color: #CED2DA;
+}
+
+div[data-theme="dark"] .input:focus{
+    border-color: white;
+}
+
+.cont{
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.validationError{
+    font-size: small;
+    position: absolute;
+    color: #f64c4c;
+    bottom: 0;
+    left: 0;
+}

@@ -5,3 +5,8 @@ export const users = {
     update: `${baseApiUrl}/users/proflie`,
     get: `${baseApiUrl}/users/session`
 }
+
+export const homePage = {
+    getPickupPoints: '/delivery/points',
+    getPackageOptions: '/delivery/package/types'
+}

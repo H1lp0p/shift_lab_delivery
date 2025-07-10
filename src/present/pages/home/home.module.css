@@ -8,10 +8,33 @@
     transition: 300ms ease;
 }
 
+.content{
+    width: 960px;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-items: center;
+    align-items: center;
+}
+
 div[data-theme="light"] .page{
     background-color: #F3F4F6;
 }
 
 div[data-theme="dark"] .page{
     background-color: #344051;
+}
+
+
+.qr{
+    transition: 300ms ease;
+}
+
+div[data-theme="light"] .qr{
+    filter: invert(1);
+}
+
+.cardTitle{
+    font-size: 24px;
 }

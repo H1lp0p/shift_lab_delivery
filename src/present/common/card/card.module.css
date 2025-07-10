@@ -3,7 +3,7 @@
 
     width: min-content;
 
-    transition: 200ms ease;
+    transition: 300ms ease;
 }
 
 div[data-theme="light"] .card{
