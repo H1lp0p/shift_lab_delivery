@@ -6,7 +6,7 @@ import type CreatePaymentPerson from "./create-payment-person";
 
 export default interface CreateOrder{
     packageId: string,
-    optionType: DeliverOption,
+    optionType: "DEFAULT" | "EXPRESS",
 
     senderPointId: string,
     senderAddress: CreateDeliveryOrderAdress,

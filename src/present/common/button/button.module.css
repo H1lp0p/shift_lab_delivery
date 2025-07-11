@@ -1,0 +1,39 @@
+.button{
+    background-color: transparent;
+    border: 1px solid #CED2DA;
+    color: #CED2DA;
+    border-radius: 8px;
+
+    padding: 16px;
+
+    transition: 100ms ease;
+}
+
+.button:hover{
+    border-color: white;
+}
+
+div[data-theme="light"] .button{
+    color: #344051;
+}
+
+.button:disabled{
+    color: transparent;
+}
+
+.button[data-variant="filled"]{
+    border: none;
+    background-color: #1975ff;
+}
+
+.button[data-variant="filled"]:hover{
+    filter: brightness(1.2);
+}
+
+div[data-theme="light"] .button[data-variant="filled"]{
+    color: white;
+}
+
+.button[data-variant="filled"]:disabled{
+    filter: brightness(.8);
+}

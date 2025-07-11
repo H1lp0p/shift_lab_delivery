@@ -20,3 +20,15 @@ export const useAxiosAuth: () => AxiosInstance = () => {
 
     return axiosInstanceRef.current
 }
+
+export const useAxios: () => AxiosInstance = () => {
+    const axiosInstanceRef = useRef<AxiosInstance | null>(null)
+
+    if (!axiosInstanceRef.current){
+        axiosInstanceRef.current = axios.create({
+            baseURL: baseApiUrl
+        })
+    }
+
+    return axiosInstanceRef.current
+}

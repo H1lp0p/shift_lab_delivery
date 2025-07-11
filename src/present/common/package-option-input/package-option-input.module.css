@@ -1,0 +1,104 @@
+.container{
+    position: relative;
+    font-size: 14px;
+    width: 320px;
+    padding: 20px;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: center;
+
+    margin-top: 8px;
+
+    padding: 8px;
+
+    border: 1px solid #ced2da;
+    border-radius: 8px;
+}
+
+.inputContainer:hover{
+    cursor: pointer;
+}
+
+.dropdown{
+    position: absolute;
+    opacity: 1;
+    z-index: 10;
+
+    margin-top: 8px;
+    padding: 4px;
+
+    background-color: #141c24;
+    border-radius: 8px;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    transition: 100ms ease;
+}
+
+div[data-theme="light"] .dropdown{
+    background-color: white;
+}
+
+.dropdown[data-visible=false]{
+    opacity: 0;
+    display: none;
+}
+
+
+.pager{
+    background-color: #344051;
+
+    width: 288px;
+
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 8px;
+
+    transition: 300ms ease;
+}
+
+div[data-theme="light"] .pager{
+    background-color: #f3f4f6;
+}
+
+.pagerItem{
+    
+    flex-grow: 1;
+
+    align-content: center;
+    text-align: center;
+
+    color: #CED2DA;
+    
+    padding: 10px 16px;
+    transition: 300ms ease;
+    border-radius: 8px;
+
+    transition: 200ms ease;
+}
+
+div[data-theme="light"] .pagerItem{
+    color: #637083;
+}
+
+.pagerItem:hover{
+    cursor: pointer;
+}
+
+.pagerItem[data-selected=true]{
+    background-color: #141c24;
+    color: white;
+}
+
+div[data-theme="light"] .pagerItem[data-selected=true]{
+    background-color: white;
+    color: #141C24;
+}
+

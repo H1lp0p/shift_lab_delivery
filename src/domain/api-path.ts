@@ -5,3 +5,13 @@ export const users = {
     update: `${baseApiUrl}/users/proflie`,
     get: `${baseApiUrl}/users/session`
 }
+
+export const homePage = {
+    getPickupPoints: '/delivery/points',
+    getPackageOptions: '/delivery/package/types'
+}
+
+export const orders = {
+    create: '/delivery/order',
+    calcDeliverOption: '/delivery/calc'
+}

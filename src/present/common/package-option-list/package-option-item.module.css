@@ -1,0 +1,35 @@
+.listItem{
+    display: flex;
+    flex-direction: row;
+    background-color: #232A32;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.listItem:hover{
+    background-color: #283039;
+}
+
+div[data-theme="light"] .listItem{
+    background-color: white;
+}
+
+div[data-theme="light"] .listItem:hover{
+    background-color: #dedede;
+}
+
+.itemLabel{
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.itemSize{
+    font-size: 12px;
+    line-height: 16px;
+    color: #CED2DA;
+}
+
+div[data-theme="light"] .itemSize{
+    color: #637083;
+}
