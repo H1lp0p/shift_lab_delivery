@@ -1,0 +1,73 @@
+/* Скрываем стандартный чекбокс */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1.5px solid #CED2DA;
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease;
+  vertical-align: middle;
+  outline: none;
+  margin: 0;
+}
+
+input[type="checkbox"]:checked {
+  background: #2196f3;
+  border-color: #2196f3;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 10px;
+  height: 16px;
+  border-right: 3px solid #111;
+  border-bottom: 3px solid #111;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.help{
+    z-index: 10;
+    position: absolute;
+    background-color: #141c24;
+
+    padding: 8px;
+    
+    max-width: 200px;
+
+    border-radius: 8px;
+
+    transform: translateY(-100%);
+
+    flex-direction: column;
+
+    transition: 300ms ease;
+}
+
+div[data-theme="light"] .help{
+    background-color: white;
+}
+
+.subText{
+    color: #CED2DA;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+div[data-theme="light"] .subText{
+    color: #637083;
+}

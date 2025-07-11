@@ -1,0 +1,36 @@
+.card{
+    display: flex;
+    flex-direction: row; 
+    align-content: center; 
+    padding: 24px 48px;
+    gap: 24px;
+    background-color: #344051;
+    border-radius: 24px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+}
+
+.title{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.data{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+}
+
+.subText{
+    font-size: 12px;
+    line-height: 16px;
+    color: #CED2DA;
+}

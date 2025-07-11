@@ -3,6 +3,7 @@ import { BoxOpenIco, UserIco } from "../../icons";
 
 import qr_img from '../../../assets/QR_koronapay.png'
 import box_img from '../../../assets/home_box.png'
+import ad_img from '../../../assets/home_ad_box.png'
 
 import css from './home.module.css'
 import { Input } from "../../common/input/input";
@@ -13,6 +14,9 @@ import type PickupPoint from "../../../data/models/pickup-point";
 import { PackageOptionInput } from "../../common/package-option-input/package-option-input";
 import { Button } from "../../common/button/button";
 import type Package from "../../../data/models/package";
+import { useMyDispatch } from "../../../domain/hooks/my-dispatch";
+import { stepZero } from "../../../domain/redux/slices/create-order-flow";
+import { useNavigate } from "react-router";
 
 export const HomePage: React.FC = () => {
 
@@ -22,8 +26,19 @@ export const HomePage: React.FC = () => {
 
     const [deliverId, setId] = useState<string>();
 
+    const dispatch = useMyDispatch();
+
+    const navigate = useNavigate();
+
     const handleSend = () => {
-        console.log(fromPoint, toPoint, packageItem);
+        if (fromPoint && toPoint && packageItem){    
+            dispatch(stepZero({
+                package: packageItem,
+                senderPoint: fromPoint,
+                receiverPoint: toPoint,
+            }))
+            navigate('/order/1')
+        }
     }
 
     return (
@@ -55,18 +70,24 @@ export const HomePage: React.FC = () => {
                         <PackageOptionInput onChange={(item) => setPackage(item)}/>
                     </div>
                     <div style={{display: "flex", flexDirection: "row-reverse", padding: 16}}>
-                        <Button label="Расчитать" variant="filled" style={{width: "200px"}} onClick={() => handleSend()}></Button>
+                        <Button label="Расчитать" variant="filled" style={{width: "200px"}} onClick={() => handleSend()} disabled={!(fromPoint && toPoint && packageItem)}></Button>
                     </div>
                 </Card>
                 {/* Track delivery + ad */}
-                <div style={{display: 'flex', flexDirection: "row"}}>
-                    <Card style={{padding: 16, margin: 32}}>
+                <div style={{display: 'flex', flexDirection: "row", padding: 32, gap: 32, width: "100%"}}>
+                    <Card style={{padding: 32, display: 'flex', flexDirection: "column", gap: "32px", flexGrow: 1}}>
                         <span className={css.cardTitle}>Отследить посылку</span>
-                        <Input placeholder="номер заказа" type={"text"} onChange={(e) => setId(e.target.value)}/>
-                        <Button onClick={() => alert(`id is ${deliverId}`)}/>
+                        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: "24px"}}>
+                            <Input placeholder="номер заказа" type={"text"} style={{alignSelf: "center", flexGrow: "4"}} onChange={(e) => setId(e.target.value)}/>
+                            <Button onClick={() => alert(`id is ${deliverId}`)} label="Найти" style={{flexGrow: 1}}/>
+                        </div>
                     </Card>
-                    <div style={{flexGrow: 2}}>
-                        <span>test</span>
+                    <div className={css.ad}>
+                        <div style={{display: "flex", flexDirection: "column"}}>
+                            <span className={css.cardTitle} style={{color: "white", marginBottom: 12}}>Бесплатная <br/> доставка</span>
+                            <span style={{color: "#FFFFFF99", fontSize: 16, lineHeight: "24px"}}>за приведённого друга</span>
+                        </div>
+                        <img src={ad_img}/>
                     </div>
                 </div>
             </div>

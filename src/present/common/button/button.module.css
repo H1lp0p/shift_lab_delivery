@@ -31,7 +31,7 @@ div[data-theme="light"] .button{
 }
 
 div[data-theme="light"] .button[data-variant="filled"]{
-    
+    color: white;
 }
 
 .button[data-variant="filled"]:disabled{

@@ -38,3 +38,15 @@ div[data-theme="light"] .qr{
 .cardTitle{
     font-size: 24px;
 }
+
+.ad{
+    border-radius: 16px;
+    background: linear-gradient(280.55deg, #FFE0B5 -23.71%, #E48F56 100.61%);
+    padding: 32px 0px 32px 16px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-self: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+}

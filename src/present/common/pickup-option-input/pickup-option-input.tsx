@@ -27,9 +27,6 @@ export const PickupPointSelect: React.FC<OptInputProps> = (props) => {
     axios.get<{success: boolean, reason?: string, points: PickupPoint[]}>(homePage.getPickupPoints)
         .then(res => {
         setPoints(res.data.points);
-        if (res.data.points.length > 0) {
-            setSelectedPoint(res.data.points[0]);
-        }
         });
     }, []);
 
@@ -82,7 +79,7 @@ export const PickupPointSelect: React.FC<OptInputProps> = (props) => {
             style={{
                 cursor: "pointer",
                 color: "#a9b1ba",
-                textDecoration: selectedPoint && selectedPoint.id === point.id ? "underline" : "none"
+                textDecoration: "underline"
             }}
             >
             {point.name}

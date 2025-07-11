@@ -5,10 +5,14 @@
 .input{
     background-color: transparent;
 
-    margin-top: .5rem;
-
-    padding: 8px;
+    padding: 12px 8px;
     border: 1px solid #CED2DA;
+
+    width: inherit;
+    flex-grow: 1;
+
+    font-size: 16px;
+    line-height: 24px;
 
     border-radius: 8px;
 
@@ -42,7 +46,8 @@ div[data-theme="dark"] .input:focus{
 
 .cont{
     position: relative;
-    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .validationError{
@@ -51,4 +56,5 @@ div[data-theme="dark"] .input:focus{
     color: #f64c4c;
     bottom: 0;
     left: 0;
+    transform: translateY(1.5rem);
 }
